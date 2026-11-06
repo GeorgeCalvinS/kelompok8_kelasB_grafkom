@@ -119,8 +119,10 @@ function buildSurface(fn, nu, nv, o) {
             for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; }
         }
     }
-    return { pos, nor, col, idx, outline: o.outline || 0, alpha: o.alpha || 1, solid: !o.alpha,
-             pivot: o.pivot || [0, 0, 0], motion: o.motion || null };
+    return {
+        pos, nor, col, idx, outline: o.outline || 0, alpha: o.alpha || 1, solid: !o.alpha,
+        pivot: o.pivot || [0, 0, 0], motion: o.motion || null
+    };
 }
 
 // ---------- ANIMASI TERBANG ----------
