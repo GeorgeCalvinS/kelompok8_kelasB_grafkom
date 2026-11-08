@@ -2,15 +2,43 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Vengefly WebGL</title>
+    <title>Vengefly, The Phlips & The Knight - WebGL Arena</title>
     <style>
-        body { margin: 0; overflow: hidden; }
+        body { margin: 0; overflow: hidden; background: #141824; font-family: sans-serif; }
         canvas { display: block; width: 100vw; height: 100vh; }
+        #ui-bar {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            z-index: 10;
+        }
+        button, .hint {
+            background: rgba(16, 20, 32, 0.85);
+            color: #e2eaf4;
+            border: 1px solid #486288;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+        button { cursor: pointer; }
+        button.active { background: #2b4c7e; border-color: #8ab4f8; }
     </style>
 </head>
 <body>
+    <div id="ui-bar">
+        <button id="btn-fly" class="active">Terbang / Animasi: ON</button>
+        <button id="btn-autorotate">Auto-Rotate: OFF</button>
+        <button id="btn-wireframe">Wireframe: OFF</button>
+        <button id="btn-reset">Reset Kamera</button>
+        <div class="hint">🖱️ Drag: Putar | Scroll: Zoom | WASD + Q/E: Geser Kamera</div>
+    </div>
+
     <canvas id="glcanvas"></canvas>
     <script src="libs.js"></script>
+    <script src="environment.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
